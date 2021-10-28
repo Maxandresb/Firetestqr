@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      home
+    </ion-title>
+    <ion-button routerLink ='../set-user' slot="end" class="">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-text color="primary">
+    <h1>Lista Usuarios</h1>
+  </ion-text>
+  <ion-list *ngFor="let usuario of usuarios" >
+    <ion-item>
+      <ion-label>{{usuario.nombre}}</ion-label>
+      <ion-label>{{usuario.clave}}</ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="scanCode()" slot="end" class="">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+ 
+</ion-footer>
