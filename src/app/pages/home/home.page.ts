@@ -47,19 +47,10 @@ export class HomePage implements OnInit {
   }
 
   scanBarcode() {
-    const options: BarcodeScannerOptions = {
-      preferFrontCamera: false,
-      showFlipCameraButton: true,
-      showTorchButton: true,
-      torchOn: false,
-      prompt: 'Place a barcode inside the scan area',
-      resultDisplayDuration: 500,
-      formats: 'EAN_13,EAN_8,QR_CODE,PDF_417 ',
-      orientation: 'portrait',
-    };
+    
 
-    this.barcodeScanner.scan(options).then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+    this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', barcodeData);
       this.scannedData = barcodeData;
 
     }).catch(err => {
