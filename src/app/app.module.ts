@@ -12,6 +12,7 @@ import {getAnalytics} from 'firebase/analytics';
 import {AngularFireModule} from '@angular/fire/compat';
 import {environment} from '../environments/environment.prod';
 import {AngularFirestore,AngularFirestoreDocument, AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 
 
@@ -28,7 +29,7 @@ import {AngularFirestore,AngularFirestoreDocument, AngularFirestoreModule} from 
    
     
    ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
